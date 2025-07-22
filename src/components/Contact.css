@@ -1,0 +1,31 @@
+section#contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
+}
+section#contact li,
+section#contact p,
+section#contact a {
+  color: #fff;
+}
+section#contact a {
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+section#contact a:hover {
+  color: var(--color-primary);
+}
+section#contact {
+  box-shadow: var(--color-shadow);
+  transition: box-shadow 0.3s, transform 0.3s, border 0.3s;
+  background: var(--color-bg-card);
+  border-radius: 18px;
+  border: 1.5px solid var(--color-border-card);
+}
+section#contact:hover {
+  box-shadow: var(--color-shadow-hover);
+  transform: translateY(-8px) scale(1.035);
+  border: 2.5px solid;
+  border-image: linear-gradient(90deg, var(--color-primary), #ffb199 80%) 1;
+} 

@@ -1,0 +1,23 @@
+footer {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  border-top: 1.5px solid var(--color-border-card);
+  background: #181818;
+  color: #fff;
+  font-size: 1rem;
+  transition: box-shadow 0.3s, transform 0.3s, border 0.3s;
+}
+footer:hover {
+  box-shadow: var(--color-shadow-hover);
+  transform: translateY(-8px) scale(1.035);
+  border-top: 2.5px solid;
+  border-image: linear-gradient(90deg, var(--color-primary), #ffb199 80%) 1;
+}
+footer a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+footer a:hover {
+  color: #fff;
+} 

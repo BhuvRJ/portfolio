@@ -1,0 +1,12 @@
+:root {
+  --color-bg: #111;
+  --color-bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #232526 100%);
+  --color-bg-card: #222;
+  --color-primary: #f2583f;
+  --color-text: #fff;
+  --color-text-dark: #111;
+  --color-shadow: 0 4px 24px rgba(0,0,0,0.25);
+  --color-shadow-hover: 0 8px 32px rgba(242,88,63,0.18);
+  --color-border: #f2583f44;
+  --color-border-card: #f2583f;
+} 

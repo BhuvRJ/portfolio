@@ -1,0 +1,67 @@
+/***** Layout & Typography *****/
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: var(--color-bg-gradient);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem 1rem;
+}
+
+section, .card-section {
+  background: var(--color-bg-card);
+  color: var(--color-text);
+  border-radius: 18px;
+  box-shadow: var(--color-shadow);
+  padding: 2.5rem 2rem;
+  margin-bottom: 3.5rem;
+  border: 1.5px solid var(--color-border-card);
+  transition: box-shadow 0.3s, transform 0.3s, border 0.3s;
+}
+section:hover, .card-section:hover {
+  box-shadow: var(--color-shadow-hover);
+  transform: translateY(-8px) scale(1.035);
+  border: 2.5px solid;
+  border-image: linear-gradient(90deg, var(--color-primary), #ffb199 80%) 1;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: var(--color-primary);
+}
+
+section h1, section h2, section h3, section h4,
+.card-section h1, .card-section h2, .card-section h3, .card-section h4 {
+  color: var(--color-primary);
+}
+
+section p, section li, .card-section p, .card-section li {
+  color: var(--color-text);
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+/***** Responsive *****/
+@media (max-width: 600px) {
+  main {
+    padding: 1rem 0.5rem 2rem 0.5rem;
+  }
+  section, .card-section {
+    padding: 1.2rem 0.7rem;
+    margin-bottom: 2rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+} 
