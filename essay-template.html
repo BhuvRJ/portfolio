@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why I Built a 2D Physics Engine in C++ — Bhuvan</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="essay-page">
+  <header class="site-header">
+    <div class="site-name"><a href="index.html">Bhuvan</a></div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode">&#9728;</button>
+  </header>
+
+  <main class="main main--essay">
+    <article>
+      <header class="essay-header">
+        <h1>Why I Built a 2D Physics Engine in C++</h1>
+        <p class="essay-meta-line">March 2025 &middot; build &middot; 8 min read</p>
+      </header>
+
+      <div class="essay-body">
+        <p>Most of what we do in software is built on top of layers we never open. You use a game engine or a physics library and you trust that when two boxes collide, the math is right. I wanted to stop trusting and start knowing.</p>
+
+        <p>So I built a small 2D physics engine in C++ using SFML for window and input. The goal was not to ship a product but to implement rigid body dynamics, collision detection with <code>AABB</code> and circles, and constraint resolution (distance constraints, pin joints) from first principles.</p>
+
+        <pre><code>// Example: applying impulse at contact
+void resolveCollision(Body& a, Body& b, Vec2 normal, float depth) {
+  float e = 0.5f; // restitution
+  Vec2 rv = b.velocity - a.velocity;
+  float velAlongNormal = rv.dot(normal);
+  if (velAlongNormal > 0) return;
+  float j = -(1 + e) * velAlongNormal / (a.invMass + b.invMass);
+  Vec2 impulse = j * normal;
+  a.velocity -= a.invMass * impulse;
+  b.velocity += b.invMass * impulse;
+}</code></pre>
+
+        <p>The real lesson was how many design choices hide inside "simple" physics: how you integrate, how you handle stacking, how you order constraint resolution. Reading papers and code from Box2D and Chipmunk filled in the gaps that tutorials skip.</p>
+
+        <p>If you're the kind of person who learns by building, I recommend picking one subsystem — collision, constraints, or integration — and implementing it yourself. You don't need to ship it. Understanding is the point.</p>
+
+        <hr>
+
+        <p class="essay-back"><a href="essays.html">Back to essays</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span><a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ">GitHub</a> &middot; <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/bhuvan-rajanahally-jayakumar">LinkedIn</a> &middot; <a target="_blank" rel="noopener noreferrer" href="mailto:rajanaha@usc.edu">Email</a></span>
+    <span>&copy; 2025</span>
+  </footer>
+  <script src="js/theme.js"></script>
+</body>
+</html>

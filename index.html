@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhuvan</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-name"><a href="index.html">Bhuvan</a></div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode">&#9728;</button>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="index.html" class="active">Now</a>
+        <a href="essays.html">Essays</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <section class="now-blurb">
+        <div class="now-label">March 2026 —</div>
+        <p>I'm building an MCP server that lets AI coding agents autonomously test Chrome extensions — reload, interact, inspect errors, and validate behavior without a human in the loop. I built two Chrome extensions with Claude Code recently and the testing loop was entirely manual: reload, click around, check the console, paste errors back. For simple extensions like <a target="_blank" rel="noopener noreferrer" href="https://chromewebstore.google.com/detail/gidljmnmbojjdgpmldblicbibjdebfbp">GitTrack</a>, there's no reason an agent can't do that itself.</p>
+        <p>If you're working on something interesting, I'd love to <a href="mailto:rajanaha@usc.edu">talk</a>.</p>
+      </section>
+
+      <h2 class="section-title">recent —</h2>
+      <ul class="recent-list">
+        <li class="recent-item">
+          <h3 class="project-name">Auditex</h3>
+          <p class="project-tagline">A Chrome extension that runs Kokoro TTS entirely in your browser — no backend, no paywall, no server costs. Ever.</p>
+          <p class="project-desc">I got frustrated with Speechify's paywall and built a free alternative. The first version used a cloud backend — then I realized I'd just recreated the same cost problem. So I moved the entire TTS pipeline into the browser using ONNX Runtime. 310MB model, running on-device, streaming audio through a chunked buffer with IndexedDB persistence. It works. I wrote about the whole journey.</p>
+          <p class="project-tech">JavaScript, ONNX Runtime Web, Web Audio API, Web Workers, IndexedDB, OPFS</p>
+          <p class="project-links"><a target="_blank" rel="noopener noreferrer" href="https://chromewebstore.google.com/detail/auditex/ikiaabefahnnfjninfhfeolbgkfnldpa">Chrome Web Store</a> · <a href="evolution-of-auditex.html">Essay</a></p>
+        </li>
+        <li class="recent-item">
+          <h3 class="project-name">GitTrack</h3>
+          <p class="project-tagline">A Chrome extension that tracks job applications locally and keeps you accountable through streaks.</p>
+          <p class="project-desc">My friends and I were manually texting each other daily application counts to stay accountable. That worked until it didn't. GitTrack injects directly into job listing pages — one click to mark applied, stored locally, instant lookup. Added duplicate detection, streaks, and the ability to share streak counts. Three months in, 1000+ jobs tracked, and we still call each other when someone's about to break their streak.</p>
+          <p class="project-tech">JavaScript, Chrome Extensions Manifest V3, IndexedDB</p>
+          <p class="project-links"><a target="_blank" rel="noopener noreferrer" href="https://chromewebstore.google.com/detail/gidljmnmbojjdgpmldblicbibjdebfbp">Chrome Web Store</a> </p>
+        </li>
+      </ul>
+
+      <p class="now-closing">For everything else, see my <a href="essays.html">essays</a> and <a href="projects.html">projects</a>.</p>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <span><a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ">GitHub</a> &middot; <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/bhuvan-rajanahally-jayakumar">LinkedIn</a> &middot; <a target="_blank" rel="noopener noreferrer" href="mailto:rajanaha@usc.edu">Email</a></span>
+    <span>&copy; 2025</span>
+  </footer>
+  <script src="js/theme.js"></script>
+</body>
+</html>

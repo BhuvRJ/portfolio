@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Evolution of Auditex — Bhuvan</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-name"><a href="index.html">Bhuvan</a></div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode">&#9728;</button>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="index.html">Now</a>
+        <a href="essays.html" class="active">Essays</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article>
+        <header class="essay-header">
+          <h1>The Evolution of Auditex</h1>
+          <p class="essay-meta-line">March 2026 &middot; build</p>
+        </header>
+
+        <div class="essay-body">
+          <hr>
+
+          <p>The only reason I ever opened a tech blog was because I needed an answer to something. It was almost always a Medium article. I would skim it, find the part I needed, and try to read it aloud to myself.</p>
+
+          <p>Medium eventually added a "listen to article" feature. I tried it once in 2023. It was alright, but I wasn't really the audience for it, so I moved on.</p>
+
+          <p>Then it was summer of 2025. I wanted to listen to an article about how Netflix scaled to handle massive user numbers. It was on Medium. Behind a paywall.</p>
+
+          <p>I started searching for alternatives. I quickly found that Medium's TTS was powered by Speechify, so I downloaded that. Another paywall. The few free voices they offered weren't great, and the free alternatives I tried were worse. This frustrated me. With everything companies like ElevenLabs, Google, and OpenAI are doing with voice, shouldn't there be something better available? And even if we're just talking about reading articles aloud, shouldn't there be some basic preprocessing? When I want to listen to a Medium article, I don't want to hear "Get unlimited access — sign up today" read out loud. It seemed like such an obvious thing that everyone was ignoring.</p>
+
+          <p>That's when I first wanted to build a truly free TTS.</p>
+
+          <h2>Getting sidetracked, then getting serious</h2>
+
+          <p>The idea was simple, but I had a more pressing problem: finding a job. I spent time building GitTrack, a tool for tracking job applications and keeping each other accountable. It wasn't until around December 2025 that I came back to the TTS problem.</p>
+
+          <p>I started by studying how existing products worked. The bad extensions just used Chrome's native TTS engine. Speechify did its processing on the cloud and streamed the audio back. I assumed that was the default approach for good-sounding TTS, so my goal became: build something that sounds at least as good as Speechify, with proper text preprocessing, and make it free.</p>
+
+          <p>I spent time researching the best open-source models for audio generation, comparing their tradeoffs, and settled on Kokoro. It sounded great while being small enough to be practical.</p>
+
+          <p>I built the backend over about a week. And then I stopped and asked myself: do people actually want this?</p>
+
+          <p>I went looking for discussion online. What I found was a lot of people who had simply accepted the situation — either you pay for a decent product, or you use the bad free ones. That was enough to keep going.</p>
+
+          <p>I finished the backend and it worked well. Before building the extension, I wanted to test quality, so I manually generated TTS for articles my friends wanted to listen to and sent them samples. The reviews were generally good. They were surprised — clearly not as polished as voices from Gemini or Siri, but genuinely decent.</p>
+
+          <h2>The wall</h2>
+
+          <p>Then I hit my first real roadblock, and this is where I had a realization.</p>
+
+          <p>Speechify isn't charging you for no reason. There is no way to offer cloud-based TTS at that quality for free. My goal was to make something truly free, meaning I shouldn't be paying for it out of my own pocket either. Even though I had a server set up at home, the approach I'd originally planned wasn't sustainable.</p>
+
+          <p>This is when I stopped being frustrated with Speechify and understood something: <em>only when you start solving a problem do you truly understand why the problem exists in the first place.</em></p>
+
+          <h2>Making it work anyway</h2>
+
+          <p>I was stuck for a while trying to figure out how to deliver good TTS without any server costs. Then I remembered ONNX.</p>
+
+          <p>I immediately searched for a Kokoro TTS ONNX model. The model existed, but there was a problem — the phonemizer bundled with the local model wasn't available in the ONNX deployment. I found an existing Node package for phonemization, but its output format didn't match what Kokoro expected. After testing, I found they were mostly the same except for a few phonemes, so I normalized the new generator's output to match Kokoro's expectations.</p>
+
+          <p>It worked. I could finally generate TTS audio that sounded good and was truly free — everything running in the browser, no server needed.</p>
+
+          <p>But it wasn't the complete story. I had to make some sacrifices.</p>
+
+          <p>The extension generates all audio locally, which means the user can't wait for the entire article to finish generating before playback starts. That's not how TTS is supposed to feel. So I implemented chunking: generate each sentence as a separate chunk and maintain a buffer that the user can seek through.</p>
+
+          <p>This had a subtle effect on quality. Each sentence was processed independently, so they all started with the same neutral tone. The reading lost its flow. It wasn't a dramatic drop, but if you were listening for it, you could hear it.</p>
+
+          <p>Then came another problem. The audio buffer was built on Chrome's offscreen document, which Chrome silently cleans up after 60 seconds. I never encountered this until I was nearly done with the implementation. It required a significant architectural change — I had to move the entire buffer to IndexedDB storage and rework how chunks were loaded and played back.</p>
+
+          <h2>What's next</h2>
+
+          <p>Auditex is live on the Chrome Web Store. I'm going to make my friends use it, collect feedback on where it falls short, and keep improving it for anyone who needs a free TTS.</p>
+
+          <p>I think this fills a genuine need, even if I'm a bit late to it. I'm honestly not sure how many people still go to blogs to read long articles. But I know that when they do, something like this should exist — and it should be free.</p>
+
+          <p><a target="_blank" rel="noopener noreferrer" href="https://chromewebstore.google.com/detail/auditex/ikiaabefahnnfjninfhfeolbgkfnldpa">Auditex on the Chrome Web Store</a></p>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <span><a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ">GitHub</a> &middot; <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/bhuvan-rajanahally-jayakumar">LinkedIn</a> &middot; <a target="_blank" rel="noopener noreferrer" href="mailto:rajanaha@usc.edu">Email</a></span>
+    <span>&copy; 2025</span>
+  </footer>
+  <script src="js/theme.js"></script>
+</body>
+</html>
