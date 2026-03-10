@@ -393,6 +393,57 @@ a[href^="mailto"]::after {
   color: var(--accent);
 }
 
+.project-install-line {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-install-cmd {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  background: var(--border);
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border-color 0.15s ease;
+  width: 50%;
+  min-width: 220px;
+  box-sizing: border-box;
+}
+
+.project-install-cmd:hover {
+  border-color: var(--accent);
+}
+
+.project-install-cmd:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.project-install-cmd code {
+  font-family: var(--font-ui);
+  font-size: inherit;
+  background: none;
+  padding: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-install-copy-label {
+  font-style: normal;
+  flex-shrink: 0;
+}
+
+.project-install-cmd.is-copied .project-install-copy-label {
+  color: #22c55e;
+}
+
 /* About page */
 .about-intro {
   margin-bottom: 2rem;

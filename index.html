@@ -24,26 +24,27 @@
 
     <main class="main">
       <section class="now-blurb">
-        <div class="now-label">March 2026 —</div>
-        <p>I'm building an MCP server that lets AI coding agents autonomously test Chrome extensions — reload, interact, inspect errors, and validate behavior without a human in the loop. I built two Chrome extensions with Claude Code recently and the testing loop was entirely manual: reload, click around, check the console, paste errors back. For simple extensions like <a target="_blank" rel="noopener noreferrer" href="https://chromewebstore.google.com/detail/gidljmnmbojjdgpmldblicbibjdebfbp">GitTrack</a>, there's no reason an agent can't do that itself.</p>
+        <div class="now-label">March 2026</div>
+        <p>I'm working on a research project exploring preference falsification in LLM multi-agent networks: simulating how AI agents navigate the gap between private beliefs and public expression under social pressure. We're building a dual-channel simulation framework where agents maintain honest internal beliefs but decide what to say publicly based on social costs, testing whether LLM agents reproduce the cascade dynamics from Kuran's <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Preference_falsification">preference falsification theory</a>. Building this with a team at USC for CSCI 544, with the goal of publishing.</p>
+        <p><a target="_blank" rel="noopener noreferrer" href="assets/proposal.pdf">Proposal</a></p>
         <p>If you're working on something interesting, I'd love to <a href="mailto:rajanaha@usc.edu">talk</a>.</p>
       </section>
 
-      <h2 class="section-title">recent —</h2>
+      <h2 class="section-title">recent</h2>
       <ul class="recent-list">
         <li class="recent-item">
-          <h3 class="project-name">Auditex</h3>
-          <p class="project-tagline">A Chrome extension that runs Kokoro TTS entirely in your browser — no backend, no paywall, no server costs. Ever.</p>
-          <p class="project-desc">I got frustrated with Speechify's paywall and built a free alternative. The first version used a cloud backend — then I realized I'd just recreated the same cost problem. So I moved the entire TTS pipeline into the browser using ONNX Runtime. 310MB model, running on-device, streaming audio through a chunked buffer with IndexedDB persistence. It works. I wrote about the whole journey.</p>
-          <p class="project-tech">JavaScript, ONNX Runtime Web, Web Audio API, Web Workers, IndexedDB, OPFS</p>
-          <p class="project-links"><a target="_blank" rel="noopener noreferrer" href="https://chromewebstore.google.com/detail/auditex/ikiaabefahnnfjninfhfeolbgkfnldpa">Chrome Web Store</a> · <a href="evolution-of-auditex.html">Essay</a></p>
+          <h3 class="project-name">Chrome Extension Testing MCP</h3>
+          <p class="project-tagline">An MCP server that lets AI coding agents autonomously test Chrome extensions. No manual reloading, no copy-pasting console errors, no clicking through the same popup for the hundredth time.</p>
+          <p class="project-desc">After building Auditex and GitTrack, the worst part was never the coding; it was the testing. Every small change meant reloading the extension, clicking through the UI, checking storage, and pasting errors back into the agent. For simple extensions, there's no reason an agent can't do that itself. So I built an MCP server that gives Claude direct access to a real browser through Playwright: 13 tools covering popups, storage, network, badges, messaging, tabs, and more. Published on npm.</p>
+          <p class="project-tech">TypeScript, Playwright, Model Context Protocol, Chrome Extensions API</p>
+          <p class="project-links"><a target="_blank" rel="noopener noreferrer" href="https://www.npmjs.com/package/chrome-extension-tester-mcp">npm</a> · <a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ/chrome-extension-testing-mcp">GitHub</a></p>
         </li>
         <li class="recent-item">
-          <h3 class="project-name">GitTrack</h3>
-          <p class="project-tagline">A Chrome extension that tracks job applications locally and keeps you accountable through streaks.</p>
-          <p class="project-desc">My friends and I were manually texting each other daily application counts to stay accountable. That worked until it didn't. GitTrack injects directly into job listing pages — one click to mark applied, stored locally, instant lookup. Added duplicate detection, streaks, and the ability to share streak counts. Three months in, 1000+ jobs tracked, and we still call each other when someone's about to break their streak.</p>
-          <p class="project-tech">JavaScript, Chrome Extensions Manifest V3, IndexedDB</p>
-          <p class="project-links"><a target="_blank" rel="noopener noreferrer" href="https://chromewebstore.google.com/detail/gidljmnmbojjdgpmldblicbibjdebfbp">Chrome Web Store</a> </p>
+          <h3 class="project-name">Auditex</h3>
+          <p class="project-tagline">A Chrome extension that runs Kokoro TTS entirely in your browser. No backend, no paywall, no server costs. Ever.</p>
+          <p class="project-desc">I got frustrated with Speechify's paywall and built a free alternative. The first version used a cloud backend. Then I realized I'd just recreated the same cost problem. So I moved the entire TTS pipeline into the browser using ONNX Runtime. 310MB model, running on-device, streaming audio through a chunked buffer with IndexedDB persistence. It works. I wrote about the whole journey.</p>
+          <p class="project-tech">JavaScript, ONNX Runtime Web, Web Audio API, Web Workers, IndexedDB, OPFS</p>
+          <p class="project-links"><a target="_blank" rel="noopener noreferrer" href="https://chromewebstore.google.com/detail/auditex/ikiaabefahnnfjninfhfeolbgkfnldpa">Chrome Web Store</a> · <a href="evolution-of-auditex.html">Essay</a></p>
         </li>
       </ul>
 

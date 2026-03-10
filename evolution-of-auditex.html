@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Evolution of Auditex — Bhuvan</title>
+  <title>The Evolution of Auditex · Bhuvan</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -38,7 +38,7 @@
 
           <p>Then it was summer of 2025. I wanted to listen to an article about how Netflix scaled to handle massive user numbers. It was on Medium. Behind a paywall.</p>
 
-          <p>I started searching for alternatives. I quickly found that Medium's TTS was powered by Speechify, so I downloaded that. Another paywall. The few free voices they offered weren't great, and the free alternatives I tried were worse. This frustrated me. With everything companies like ElevenLabs, Google, and OpenAI are doing with voice, shouldn't there be something better available? And even if we're just talking about reading articles aloud, shouldn't there be some basic preprocessing? When I want to listen to a Medium article, I don't want to hear "Get unlimited access — sign up today" read out loud. It seemed like such an obvious thing that everyone was ignoring.</p>
+          <p>I started searching for alternatives. I quickly found that Medium's TTS was powered by Speechify, so I downloaded that. Another paywall. The few free voices they offered weren't great, and the free alternatives I tried were worse. This frustrated me. With everything companies like ElevenLabs, Google, and OpenAI are doing with voice, shouldn't there be something better available? And even if we're just talking about reading articles aloud, shouldn't there be some basic preprocessing? When I want to listen to a Medium article, I don't want to hear "Get unlimited access, sign up today" read out loud. It seemed like such an obvious thing that everyone was ignoring.</p>
 
           <p>That's when I first wanted to build a truly free TTS.</p>
 
@@ -52,9 +52,9 @@
 
           <p>I built the backend over about a week. And then I stopped and asked myself: do people actually want this?</p>
 
-          <p>I went looking for discussion online. What I found was a lot of people who had simply accepted the situation — either you pay for a decent product, or you use the bad free ones. That was enough to keep going.</p>
+          <p>I went looking for discussion online. What I found was a lot of people who had simply accepted the situation: either you pay for a decent product, or you use the bad free ones. That was enough to keep going.</p>
 
-          <p>I finished the backend and it worked well. Before building the extension, I wanted to test quality, so I manually generated TTS for articles my friends wanted to listen to and sent them samples. The reviews were generally good. They were surprised — clearly not as polished as voices from Gemini or Siri, but genuinely decent.</p>
+          <p>I finished the backend and it worked well. Before building the extension, I wanted to test quality, so I manually generated TTS for articles my friends wanted to listen to and sent them samples. The reviews were generally good. They were surprised. Clearly not as polished as voices from Gemini or Siri, but genuinely decent.</p>
 
           <h2>The wall</h2>
 
@@ -68,9 +68,9 @@
 
           <p>I was stuck for a while trying to figure out how to deliver good TTS without any server costs. Then I remembered ONNX.</p>
 
-          <p>I immediately searched for a Kokoro TTS ONNX model. The model existed, but there was a problem — the phonemizer bundled with the local model wasn't available in the ONNX deployment. I found an existing Node package for phonemization, but its output format didn't match what Kokoro expected. After testing, I found they were mostly the same except for a few phonemes, so I normalized the new generator's output to match Kokoro's expectations.</p>
+          <p>I immediately searched for a Kokoro TTS ONNX model. The model existed, but there was a problem: the phonemizer bundled with the local model wasn't available in the ONNX deployment. I found an existing Node package for phonemization, but its output format didn't match what Kokoro expected. After testing, I found they were mostly the same except for a few phonemes, so I normalized the new generator's output to match Kokoro's expectations.</p>
 
-          <p>It worked. I could finally generate TTS audio that sounded good and was truly free — everything running in the browser, no server needed.</p>
+          <p>It worked. I could finally generate TTS audio that sounded good and was truly free. Everything running in the browser, no server needed.</p>
 
           <p>But it wasn't the complete story. I had to make some sacrifices.</p>
 
@@ -78,13 +78,13 @@
 
           <p>This had a subtle effect on quality. Each sentence was processed independently, so they all started with the same neutral tone. The reading lost its flow. It wasn't a dramatic drop, but if you were listening for it, you could hear it.</p>
 
-          <p>Then came another problem. The audio buffer was built on Chrome's offscreen document, which Chrome silently cleans up after 60 seconds. I never encountered this until I was nearly done with the implementation. It required a significant architectural change — I had to move the entire buffer to IndexedDB storage and rework how chunks were loaded and played back.</p>
+          <p>Then came another problem. The audio buffer was built on Chrome's offscreen document, which Chrome silently cleans up after 60 seconds. I never encountered this until I was nearly done with the implementation. It required a significant architectural change: I had to move the entire buffer to IndexedDB storage and rework how chunks were loaded and played back.</p>
 
           <h2>What's next</h2>
 
           <p>Auditex is live on the Chrome Web Store. I'm going to make my friends use it, collect feedback on where it falls short, and keep improving it for anyone who needs a free TTS.</p>
 
-          <p>I think this fills a genuine need, even if I'm a bit late to it. I'm honestly not sure how many people still go to blogs to read long articles. But I know that when they do, something like this should exist — and it should be free.</p>
+          <p>I think this fills a genuine need, even if I'm a bit late to it. I'm honestly not sure how many people still go to blogs to read long articles. But I know that when they do, something like this should exist, and it should be free.</p>
 
           <p><a target="_blank" rel="noopener noreferrer" href="https://chromewebstore.google.com/detail/auditex/ikiaabefahnnfjninfhfeolbgkfnldpa">Auditex on the Chrome Web Store</a></p>
         </div>
