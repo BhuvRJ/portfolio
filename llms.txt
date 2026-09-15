@@ -1,0 +1,19 @@
+# Bhuvan R J
+
+> Personal site of Bhuvan Rajanahally Jayakumar, Graduate Student, Computer Science, University of Southern California. Builds things that run in the real world: on-device TTS in the browser, MCP tooling for AI agents, computer vision on real hardware.
+
+Contact: rajanaha@usc.edu · [GitHub](https://github.com/BHUVAN-RJ) · [LinkedIn](https://www.linkedin.com/in/bhuvan-rajanahally-jayakumar)
+
+## Pages
+
+- [Now](https://bhuvanrj.me/portfolio/index.html): What I am working on right now, plus two recent projects.
+- [About](https://bhuvanrj.me/portfolio/about.html): Bio, work history, and influences.
+- [Projects](https://bhuvanrj.me/portfolio/projects.html): All 19 projects with descriptions, tech, and links.
+- [Essays](https://bhuvanrj.me/portfolio/essays.html): Index of essays.
+- [The Evolution of Auditex](https://bhuvanrj.me/portfolio/evolution-of-auditex.html): How a frustrating paywall led to building a truly free, on-device TTS extension.
+
+## Machine-readable
+
+- [llms-full.txt](https://bhuvanrj.me/portfolio/llms-full.txt): entire site as one markdown file. Fetch this instead of the HTML pages.
+- [data.json](https://bhuvanrj.me/portfolio/data.json): same content as structured JSON (person, now, projects, essays, about).
+- [Resume (PDF)](https://bhuvanrj.me/portfolio/assets/Bhuvan_Rajanahally_Jayakumar_Resume.pdf)
