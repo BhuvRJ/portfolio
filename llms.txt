@@ -8,8 +8,11 @@ Contact: rajanaha@usc.edu · [GitHub](https://github.com/BHUVAN-RJ) · [LinkedIn
 
 - [Now](https://bhuvanrj.me/portfolio/index.html): What I am working on right now, plus two recent projects.
 - [About](https://bhuvanrj.me/portfolio/about.html): Bio, work history, and influences.
-- [Projects](https://bhuvanrj.me/portfolio/projects.html): All 19 projects with descriptions, tech, and links.
+- [Projects](https://bhuvanrj.me/portfolio/projects.html): All 27 projects with descriptions, tech, and links.
 - [Essays](https://bhuvanrj.me/portfolio/essays.html): Index of essays.
+- [Work](https://bhuvanrj.me/portfolio/work/index.html): Short, visual version of the portfolio: experience, selected work, education, writing.
+- [The Case for Personal Software](https://bhuvanrj.me/portfolio/the-case-for-personal-software.html): Every app you use was built by a company that optimized it for itself.
+- [The State of Voice Agents](https://bhuvanrj.me/portfolio/state-of-voice-agents.html): Personality isn't the problem. Ease of use and the cost of verification are.
 - [The Evolution of Auditex](https://bhuvanrj.me/portfolio/evolution-of-auditex.html): How a frustrating paywall led to building a truly free, on-device TTS extension.
 
 ## Machine-readable

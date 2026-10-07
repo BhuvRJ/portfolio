@@ -72,7 +72,10 @@ function parseItem(li) {
     description: paragraphs(block(li, 'project-desc', 'div') || block(li, 'project-desc', 'p')).join('\n\n'),
     tech: dateMatch ? techRaw.slice(0, dateMatch.index).trim() : techRaw,
     date: dateMatch ? dateMatch[1] : undefined,
-    install: text(block(li, 'project-install-cmd', 'span')).replace(/Copy$/, '').trim() || undefined,
+    // the visible <code> may be a short label; the real command lives in data-copy
+    install: (li.match(/class="project-install-cmd"[^>]*\sdata-copy="([^"]*)"/) || li.match(/\sdata-copy="([^"]*)"[^>]*class="project-install-cmd"/) || [])[1]
+      ? decodeEntities((li.match(/class="project-install-cmd"[^>]*\sdata-copy="([^"]*)"/) || li.match(/\sdata-copy="([^"]*)"[^>]*class="project-install-cmd"/))[1])
+      : (text(block(li, 'project-install-cmd', 'span')).replace(/Copy$/, '').trim() || undefined),
     links: links(block(li, 'project-links-header', 'p') + block(li, 'project-links', 'p')),
   };
 }
@@ -131,11 +134,18 @@ const person = {
   linkedin: 'https://www.linkedin.com/in/bhuvan-rajanahally-jayakumar',
   resume: abs('assets/Bhuvan_Rajanahally_Jayakumar_Resume.pdf'),
 };
+function decodeEntities(x) {
+  return String(x)
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&middot;/g, '\u00b7');
+}
+
 const pages = [
   { file: 'index.html', title: 'Now', summary: 'What I am working on right now, plus two recent projects.' },
   { file: 'about.html', title: 'About', summary: 'Bio, work history, and influences.' },
   { file: 'projects.html', title: 'Projects', summary: `All ${projects.length} projects with descriptions, tech, and links.` },
   { file: 'essays.html', title: 'Essays', summary: 'Index of essays.' },
+  { file: 'work/index.html', title: 'Work', summary: 'Short, visual version of the portfolio: experience, selected work, education, writing.' },
   ...essays.map((e) => ({ file: new URL(e.url).pathname.split('/').pop(), title: e.title, summary: e.summary })),
 ];
 
@@ -224,7 +234,7 @@ fs.writeFileSync(path.join(ROOT, 'llms-full.txt'), full);
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${pages.map((p) => `  <url>\n    <loc>${abs(p.file === 'index.html' ? '' : p.file)}</loc>\n    <lastmod>${lastmod(p.file)}</lastmod>\n  </url>`).join('\n')}
+${pages.map((p) => `  <url>\n    <loc>${abs(p.file === 'index.html' ? '' : p.file.replace(/(^|\/)index\.html$/, '$1'))}</loc>\n    <lastmod>${lastmod(p.file)}</lastmod>\n  </url>`).join('\n')}
 </urlset>
 `;
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap);

@@ -289,7 +289,10 @@
 <body>
   <header class="site-header">
     <div class="site-name"><a href="index.html">Bhuvan R J</a></div>
-    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode">&#9728;</button>
+    <div class="site-header-right">
+      <a class="short-link" href="work/" title="The short, visual version">Short version &rarr;</a>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode">&#9728;</button>
+    </div>
   </header>
 
   <div class="layout">
@@ -308,8 +311,105 @@
 
       <ul class="project-list">
         <li class="project-item">
+          <h3 class="project-name">Auto-Apply</h3>
+          <p class="project-links-header"><a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ/Auto-Apply">GitHub</a> &middot; <span class="project-install-cmd" data-copy="Install Autopilot from https://github.com/BHUVAN-RJ/Auto-Apply. Follow INSTALL.md in that repository." role="button" tabindex="0" title="Click to copy"><code>Install in Claude Code</code><span class="project-install-copy-label">Copy</span></span></p>
+          <p class="project-tagline">Autonomous from the posting to the filled form. It never hits submit. You do.</p>
+          <div class="project-desc">
+            <p>Cuts time per job application from 5 minutes to 45 seconds. I click a posting; everything after that runs on its own. It tailors the LaTeX resume to that description, renders it to one page, fills the form and the free-form questions, attaches a cover letter, and stops at the submit button.</p>
+            <p>The goal was to make it autonomous and make reviewing it cheap, because an autonomous agent you have to audit line by line is not autonomous. Two things do that work. The resume opens in a diff view that highlights only what changed, so I read the edits instead of the document. And every field the agent fills anywhere, Ashby included, gets stamped with the app's logo, so I check those fields and skip the rest.</p>
+            <p>One checkpoint. The phone gets a message, I look at the diff and the stamped fields, and I press submit. 300+ applications in two weeks, and four friends now run their own copies.</p>
+          </div>
+          <p class="project-tech">Python, FastAPI, LaTeX, browser-use, a Chrome extension, and pytest. Sept 2026</p>
+          <hr class="project-divider">
+        </li>
+
+        <li class="project-item">
+          <h3 class="project-name">Project Hydra</h3>
+          <p class="project-links-header"><a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ/Project-Hydra">GitHub</a></p>
+          <p class="project-tagline">Backend scale engineering where the numbers are measured, not guessed.</p>
+          <div class="project-desc">
+            <p>Nothing is simulated. The harness brings a topology up as real Docker containers, drives it with k6, scrapes Prometheus, and returns throughput and p50/p95/p99 at each load level.</p>
+            <p>Three run tiers, from a 60-second smoke test to a 25–30 minute sweep (100 to 8,000 RPS) that fits the Universal Scalability Law with confidence intervals. Load is open-model, so the measured tail isn't hidden by coordinated omission. Every data point carries provenance: measured renders solid, projections translucent, and past 100× it returns architecture recommendations instead of numbers.</p>
+          </div>
+          <p class="project-tech">Docker, k6, Prometheus, and queuing theory: the Universal Scalability Law and M/M/c models. Sept 2026</p>
+          <hr class="project-divider">
+        </li>
+
+        <li class="project-item">
+          <h3 class="project-name">Instant-Reply</h3>
+          <p class="project-links-header"><a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ/Instant-reply">GitHub</a></p>
+          <p class="project-tagline">A Gmail extension that turns a few words into a finished reply, using the whole thread as context.</p>
+          <div class="project-desc">
+            <p>Type an instruction in the reply box, "ask for the invoice", hit Refactor, and the box fills with a draft written in your voice off the whole thread. Nothing sends automatically.</p>
+            <p>The voice starts empty and is learned: every revision you ask for and every hand edit before sending feeds back into notes the model keeps about how you write. Each thread holds its own history, and all of it stays in local storage.</p>
+          </div>
+          <p class="project-tech">Chrome Extensions Manifest V3, a background service worker, IndexedDB, and the OpenRouter API. Sept 2026</p>
+          <hr class="project-divider">
+        </li>
+
+        <li class="project-item">
+          <h3 class="project-name">Self-Evolving Closed-Loop Agent</h3>
+          <p class="project-links-header"><a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ/Self-Evolving-closed-loop-agent">GitHub</a></p>
+          <p class="project-tagline">An agent that rewrites its own strategy between games, built in a three-hour window.</p>
+          <div class="project-desc">
+            <p>Built during an interview for <a target="_blank" rel="noopener noreferrer" href="https://starsling.dev/">StarSling</a> (YC S25). Battleship against a server that only broadcasts its own moves. The agent plays, profiles the opponent, synthesizes a counter-strategy for that opponent, and keeps it only if it beats the current champion in real play.</p>
+            <p>Six of fifteen opponents were deterministic enough to freeze as solved. Score sat at 570/1000 for two hours, then jumped to 740 in the final thirty minutes.</p>
+          </div>
+          <p class="project-tech">Python, Claude Opus and Sonnet, pytest. June 2026</p>
+          <hr class="project-divider">
+        </li>
+
+        <li class="project-item">
+          <h3 class="project-name">Time-Keeper</h3>
+          <p class="project-links-header"><a target="_blank" rel="noopener noreferrer" href="https://time-keeper-flax.vercel.app/login">Live app</a> &middot; <a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ/Time-Keeper">GitHub</a></p>
+          <p class="project-tagline">Productivity tracking that costs nothing to do.</p>
+          <div class="project-desc">
+            <p>One timer synced across every device, magic-link login, no passwords. A tracker that takes effort doesn't get used.</p>
+            <p>The first build waited on the backend before updating the UI, which made it feel dead on a phone. Rewiring every interaction to respond first and reconcile after fixed it; the timer starts instantly on-device and syncs to the minute. Built for three people, used by five.</p>
+          </div>
+          <p class="project-tech">Next.js, TypeScript, React, Turso, Vercel. A PWA with magic-link auth. 2026</p>
+          <hr class="project-divider">
+        </li>
+
+        <li class="project-item">
+          <h3 class="project-name">Content Segmenter</h3>
+          <p class="project-links-header"><a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ/content-segmenter">GitHub</a></p>
+          <p class="project-tagline">Auto-chapters for video: split a long recording into content and the junk between it.</p>
+          <div class="project-desc">
+            <p>The goal was deterministic and fast: segment 30-minute to hour-long videos on as few resources as possible, and get the same answer every run. Colour-histogram scene detection finds candidate cuts, and audio features decide what each region actually is.</p>
+            <p>My part was classifying the regions. Boundaries alone don't tell you whether a segment is content or an ad, so I used MFCCs and spectral analysis to judge each one. Where a video had rapid cuts, there wasn't enough audio inside a region to judge it, and that's where the accuracy went: we expected 99% and landed at 94%. A Qt6 player skips the junk on playback.</p>
+          </div>
+          <p class="project-tech">Python and C++, MFCCs, spectral analysis and self-similarity matrices, with a Qt6 desktop player. 2026</p>
+          <hr class="project-divider">
+        </li>
+
+        <li class="project-item">
+          <h3 class="project-name">DCT Image Codec</h3>
+          <p class="project-links-header"><a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ/dct-image-codec">GitHub</a></p>
+          <p class="project-tagline">An image encoder and decoder built from the transform up, with adaptive quad-tree block sizes.</p>
+          <div class="project-desc">
+            <p>Reaches up to 37:1 compression on 512×512 test images. The adaptive mode spends 5% to 48% fewer bits than fixed 8×8 blocks at the same quality setting, while staying within about 0.2 dB PSNR. Best case was a smooth image at 37:1 and 31.7 dB; worst was a heavily textured one at 8.6:1 and 25.8 dB.</p>
+            <p>The hard part was deciding when to split a block. A fixed variance cutoff behaved differently on every image, so the threshold is relative to the image's own variance: 15% of global luminance variance, scaled by block size, so large blocks have to clear a higher bar. Supporting 8, 16 and 32 pixel blocks meant building and caching separate cosine, normalization and zigzag tables for each size.</p>
+          </div>
+          <p class="project-tech">C++ with wxWidgets. 2D DCT, quantization, quad-tree segmentation and zigzag coding. June 2026</p>
+          <hr class="project-divider">
+        </li>
+
+        <li class="project-item">
+          <h3 class="project-name">Preference Falsification and LLM Sycophancy</h3>
+          <p class="project-links-header"><a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ/Preference-falsification-and-LLM-sycophancy">GitHub</a></p>
+          <p class="project-tagline">What LLM agents say in public versus what they say in private, measured directly.</p>
+          <div class="project-desc">
+            <p>24 agents over 9 rounds and 7 conditions, each making a separate private and public call per round, so the gap is measured rather than inferred.</p>
+            <p>Social pressure behaved as a threshold, not a gradient: falsification appeared only under concrete career threats (gap 1.71), while no pressure and moderate pressure sat at the stochastic floor. A whistleblower planted at round five moved about 20% of agents to honest public expression. Written up as a preprint.</p>
+          </div>
+          <p class="project-tech">Python, LangChain, Google Gemini, NetworkX, Pandas, Matplotlib, Flask. April 2026</p>
+          <hr class="project-divider">
+        </li>
+
+        <li class="project-item">
           <h3 class="project-name">AudiTex</h3>
-          <p class="project-links-header"><a target="_blank" rel="noopener noreferrer" href="https://chromewebstore.google.com/detail/auditex/ikiaabefahnnfjninfhfeolbgkfnldpa">Chrome Web Store</a></p>
+          <p class="project-links-header"><a target="_blank" rel="noopener noreferrer" href="https://chromewebstore.google.com/detail/auditex/ikiaabefahnnfjninfhfeolbgkfnldpa">Chrome Web Store</a> &middot; <a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ/AudiTex">GitHub</a></p>
           <p class="project-tagline">A Chrome extension that runs Kokoro TTS entirely on-device. No backend, no paywall, no server bills.</p>
           <div class="project-desc">
             <p>I got annoyed at Speechify's paywall and decided to build a free alternative. The naive version was obvious: run a backend, stream audio back. Took a week to build, worked great. Then I realised I'd just become Speechify, except I'd be the one paying the bills. So I scrapped it.</p>
@@ -327,7 +427,7 @@
           <div class="project-desc">
             <p>Two things broke me. First: my friends and I were manually texting each other our daily application counts to stay accountable. It worked but it was held together with string. Second: during an AWS outage I needed to check if I'd applied to a specific job on Simplify. Login, wait, dismiss promotions, wait again, search. Two minutes for one yes or no. I lost it and started building.</p>
             <p>The first version was just a button injected into GitHub job listing pages: applied or not, stored locally, instant. No login, no cloud, no waiting. V2 added duplicate detection, streaks, and the ability to share your streak count with friends.</p>
-            <p>Three months later, 1000+ jobs tracked, and I've called friends to warn them they're about to break their streak. They've done the same for me. Turns out a stupid little number is a surprisingly effective forcing function.</p>
+            <p>Three months later, 3000+ jobs tracked, and I've called friends to warn them they're about to break their streak. They've done the same for me. Turns out a stupid little number is a surprisingly effective forcing function.</p>
           </div>
           <p class="project-tech">Built with JavaScript, Chrome Extensions Manifest V3, and IndexedDB. No servers were harmed. Sept 2025</p>
           <hr class="project-divider">
@@ -340,7 +440,7 @@
           <p class="project-tagline">An MCP server that lets AI coding agents autonomously test Chrome extensions. No manual reloading, no copy-pasting console errors, no clicking through the same popup for the hundredth time.</p>
           <div class="project-desc">
             <p>After building Auditex and GitTrack, I noticed the worst part was never the coding; it was the testing. Every small change meant manually reloading the extension, clicking through the UI, checking storage, reading console output, and pasting errors back into the agent. For simple extensions, there's no reason an AI agent can't do all of that itself.</p>
-            <p>So I built an MCP server that gives Claude direct access to a real browser through Playwright. Load an unpacked extension, interact with its popup, inspect chrome.storage, monitor network requests, check badge state, send messages to the background script, simulate tab events: 13 tools in total. Some I knew I needed from day one, others I added as I kept testing my own extensions and hitting new gaps. Published as an npm package, works with Claude Desktop and Claude Code out of the box.</p>
+            <p>So I built an MCP server that gives Claude direct access to a real browser through Playwright. Load an unpacked extension, interact with its popup, inspect chrome.storage, monitor network requests, check badge state, send messages to the background script, simulate tab events: 17 tools in total. Some I knew I needed from day one, others I added as I kept testing my own extensions and hitting new gaps. Published as an npm package, works with Claude Desktop and Claude Code out of the box.</p>
             <p>Because life's too short to reload an extension 400 times.</p>
           </div>
           <p class="project-tech">Published as an npm package, works with Claude Desktop and Claude Code out of the box. March 2026</p>
@@ -581,5 +681,6 @@
       });
     })();
   </script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "803ee68db8aa4fab97fc5fe91245f825"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

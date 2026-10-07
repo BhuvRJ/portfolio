@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About · Bhuvan R J</title>
-  <meta name="description" content="Bhuvan is a Computer Science graduate student at USC, previously an AI research intern at the Indian Institute of Science and software engineering intern at Stylebot. Bio, work history, and influences.">
+  <meta name="description" content="Bhuvan is a Computer Science graduate student at USC, previously backend and cloud pod lead for USC's Grand Challenges Scholars Program, an AI research intern at the Indian Institute of Science, and a software engineering intern at Stylebot. Bio, work history, and influences.">
   <meta name="author" content="Bhuvan Rajanahally Jayakumar">
   <link rel="canonical" href="https://bhuvanrj.me/portfolio/about.html">
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Bhuvan R J">
   <meta property="og:title" content="About · Bhuvan R J">
-  <meta property="og:description" content="Bhuvan is a Computer Science graduate student at USC, previously an AI research intern at the Indian Institute of Science and software engineering intern at Stylebot. Bio, work history, and influences.">
+  <meta property="og:description" content="Bhuvan is a Computer Science graduate student at USC, previously backend and cloud pod lead for USC's Grand Challenges Scholars Program, an AI research intern at the Indian Institute of Science, and a software engineering intern at Stylebot. Bio, work history, and influences.">
   <meta property="og:url" content="https://bhuvanrj.me/portfolio/about.html">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="About · Bhuvan R J">
-  <meta name="twitter:description" content="Bhuvan is a Computer Science graduate student at USC, previously an AI research intern at the Indian Institute of Science and software engineering intern at Stylebot. Bio, work history, and influences.">
+  <meta name="twitter:description" content="Bhuvan is a Computer Science graduate student at USC, previously backend and cloud pod lead for USC's Grand Challenges Scholars Program, an AI research intern at the Indian Institute of Science, and a software engineering intern at Stylebot. Bio, work history, and influences.">
   <link rel="alternate" type="text/markdown" href="llms.txt" title="llms.txt">
   <link rel="alternate" type="application/json" href="data.json" title="Site data (JSON)">
   <script type="application/ld+json">
@@ -35,7 +35,7 @@
     "https://github.com/BHUVAN-RJ",
     "https://www.linkedin.com/in/bhuvan-rajanahally-jayakumar"
   ],
-  "description": "Graduate Student at USC studying Computer Science. Previously AI Research Intern at the Indian Institute of Science and Software Engineering Intern at Stylebot.",
+  "description": "Graduate Student at USC studying Computer Science. Previously Backend and Cloud Pod Lead for USC's Grand Challenges Scholars Program, AI Research Intern at the Indian Institute of Science, and Software Engineering Intern at Stylebot.",
   "alumniOf": [
     {
       "@type": "Organization",
@@ -53,7 +53,10 @@
 <body>
   <header class="site-header">
     <div class="site-name"><a href="index.html">Bhuvan R J</a></div>
-    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode">&#9728;</button>
+    <div class="site-header-right">
+      <a class="short-link" href="work/" title="The short, visual version">Short version &rarr;</a>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode">&#9728;</button>
+    </div>
   </header>
 
   <div class="layout">
@@ -69,7 +72,6 @@
     <main class="main">
       <section class="about-intro">
         <p>I'm Bhuvan. I'm a Graduate Student at USC studying Computer Science, and before that I was a research intern at the Indian Institute of Science working on AI-assisted physical therapy.</p>
-        <p>I like building things that work in the real world. Not demos, not prototypes that live in a GitHub README: systems that run on real hardware, serve real users, and break in ways you didn't expect. I've deployed computer vision on a coffee plantation, shipped a Chrome extension that runs a 310MB TTS model entirely in your browser, and built a grammar enforcement system that catches the difference between "roundup" and "round-up" for media companies that can't afford to get it wrong.</p>
         <p>When I'm not building, I'm usually on a trail somewhere near LA (I've done most of the major hikes at this point) or losing SR in Overwatch and Apex. I hit Masters in Apex and Diamond in Overwatch, both solo queue, which I'm convinced is harder than any system design interview.</p>
       </section>
 
@@ -78,6 +80,11 @@
       <h2 class="section-title">work</h2>
       <section class="about-work">
         <div class="about-work-entry">
+          <p class="about-work-heading"><strong class="about-work-company">USC Grand Challenges Scholars Program</strong> <span class="essay-date">Backend &amp; Cloud Pod Lead, 2026</span></p>
+          <p class="about-work-desc">Led the backend and cloud pods for the GCSP Network Portal, a collaboration platform connecting Grand Challenge Scholars across 100+ institutions. Owned API scalability on a FastAPI and Supabase service, and revamped and expanded the project site with forums, direct messaging and real-time channel chat.</p>
+        </div>
+        <hr class="project-divider">
+        <div class="about-work-entry">
           <p class="about-work-heading"><strong class="about-work-company">Stylebot</strong> <span class="essay-date">Software Engineering Intern, 2025</span></p>
           <p class="about-work-desc">Built a grammar enforcement system from scratch for content-sensitive media companies: think style rules like "roundup" vs "round-up" vs "round up" where getting it wrong actually matters. Got the system to 98% detection coverage across edge cases, processing text from Google Docs in real-time for 20+ enterprise clients.</p>
         </div>
@@ -85,6 +92,15 @@
         <div class="about-work-entry">
           <p class="about-work-heading"><strong class="about-work-company">Indian Institute of Science</strong> <span class="essay-date">AI Research Intern, 2023–24</span></p>
           <p class="about-work-desc">Worked on an AI-assisted yoga coach for physical therapy recovery. Built a 10,000+ image dataset with custom anatomical keypoints defined alongside doctors, along with the annotation tooling and validation pipelines to keep it consistent as the team scaled.</p>
+        </div>
+      </section>
+
+      <hr class="project-divider">
+
+      <h2 class="section-title">awards</h2>
+      <section class="about-section">
+        <div class="about-work-entry">
+          <p class="about-work-heading"><strong class="about-work-company">Early Career Innovator Award</strong> <span class="essay-date">University of Southern California, 2025</span></p>
         </div>
       </section>
 
@@ -113,5 +129,6 @@
     <span>&copy; 2025</span>
   </footer>
   <script src="js/theme.js"></script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "803ee68db8aa4fab97fc5fe91245f825"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

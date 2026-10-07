@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bhuvan R J</title>
-  <meta name="description" content="Bhuvan Rajanahally Jayakumar, CS graduate student at USC. Currently researching preference falsification in LLM multi-agent networks. Builds on-device TTS, MCP tooling for AI agents, and systems that run on real hardware.">
+  <meta name="description" content="Bhuvan Rajanahally Jayakumar, CS graduate student at USC. Currently building Midas, personal software made for one person. Builds on-device TTS, MCP tooling for AI agents, and systems that run on real hardware.">
   <meta name="author" content="Bhuvan Rajanahally Jayakumar">
   <link rel="canonical" href="https://bhuvanrj.me/portfolio/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bhuvan R J">
   <meta property="og:title" content="Bhuvan R J">
-  <meta property="og:description" content="Bhuvan Rajanahally Jayakumar, CS graduate student at USC. Currently researching preference falsification in LLM multi-agent networks. Builds on-device TTS, MCP tooling for AI agents, and systems that run on real hardware.">
+  <meta property="og:description" content="Bhuvan Rajanahally Jayakumar, CS graduate student at USC. Currently building Midas, personal software made for one person. Builds on-device TTS, MCP tooling for AI agents, and systems that run on real hardware.">
   <meta property="og:url" content="https://bhuvanrj.me/portfolio/">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Bhuvan R J">
-  <meta name="twitter:description" content="Bhuvan Rajanahally Jayakumar, CS graduate student at USC. Currently researching preference falsification in LLM multi-agent networks. Builds on-device TTS, MCP tooling for AI agents, and systems that run on real hardware.">
+  <meta name="twitter:description" content="Bhuvan Rajanahally Jayakumar, CS graduate student at USC. Currently building Midas, personal software made for one person. Builds on-device TTS, MCP tooling for AI agents, and systems that run on real hardware.">
   <link rel="alternate" type="text/markdown" href="llms.txt" title="llms.txt">
   <link rel="alternate" type="application/json" href="data.json" title="Site data (JSON)">
   <script type="application/ld+json">
@@ -55,7 +55,10 @@
 <body>
   <header class="site-header">
     <div class="site-name"><a href="index.html">Bhuvan R J</a></div>
-    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode">&#9728;</button>
+    <div class="site-header-right">
+      <a class="short-link" href="work/" title="The short, visual version">Short version &rarr;</a>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode">&#9728;</button>
+    </div>
   </header>
 
   <div class="layout">
@@ -70,27 +73,34 @@
 
     <main class="main">
       <section class="now-blurb">
-        <div class="now-label">March 2026</div>
-        <p>I'm working on a research project exploring preference falsification in LLM multi-agent networks: simulating how AI agents navigate the gap between private beliefs and public expression under social pressure. We're building a dual-channel simulation framework where agents maintain honest internal beliefs but decide what to say publicly based on social costs, testing whether LLM agents reproduce the cascade dynamics from Kuran's <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Preference_falsification">preference falsification theory</a>. Building this with a team at USC for CSCI 544, with the goal of publishing.</p>
-        <p><a target="_blank" rel="noopener noreferrer" href="assets/proposal.pdf">Proposal</a></p>
+        <div class="now-label">October 2026</div>
+        <p>I'm building Midas, which gives everyone their own personal software. You describe the small thing your life is missing, in your own words, and it shows up on your phone, made just for you. It stays private, with nothing public and nothing listed for strangers to find, and Midas keeps it working and lets it grow as your life changes.</p>
+        <p><a href="the-case-for-personal-software.html">The Case for Personal Software</a></p>
         <p>If you're working on something interesting, I'd love to <a href="mailto:rajanaha@usc.edu">talk</a>.</p>
       </section>
 
       <h2 class="section-title">recent</h2>
       <ul class="recent-list">
         <li class="recent-item">
-          <h3 class="project-name">Chrome Extension Testing MCP</h3>
-          <p class="project-tagline">An MCP server that lets AI coding agents autonomously test Chrome extensions. No manual reloading, no copy-pasting console errors, no clicking through the same popup for the hundredth time.</p>
-          <p class="project-desc">After building Auditex and GitTrack, the worst part was never the coding; it was the testing. Every small change meant reloading the extension, clicking through the UI, checking storage, and pasting errors back into the agent. For simple extensions, there's no reason an agent can't do that itself. So I built an MCP server that gives Claude direct access to a real browser through Playwright: 13 tools covering popups, storage, network, badges, messaging, tabs, and more. Published on npm.</p>
-          <p class="project-tech">TypeScript, Playwright, Model Context Protocol, Chrome Extensions API</p>
-          <p class="project-links"><a target="_blank" rel="noopener noreferrer" href="https://www.npmjs.com/package/chrome-extension-tester-mcp">npm</a> · <a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ/chrome-extension-testing-mcp">GitHub</a></p>
+          <h3 class="project-name">Auto-Apply</h3>
+          <p class="project-tagline">Autonomous from the posting to the filled form. It never hits submit. You do.</p>
+          <p class="project-desc">Cuts time per job application from 5 minutes to 45 seconds. I click a posting; everything after that runs on its own. It tailors the LaTeX resume to that description, renders it to one page, fills the form and the free-form questions, attaches a cover letter, and stops at the submit button. The resume opens in a diff view that highlights only what changed, and every field the agent fills gets stamped with the app's logo, so I check those and skip the rest. 300+ applications in two weeks.</p>
+          <p class="project-tech">Python, FastAPI, LaTeX, browser-use, a Chrome extension, pytest</p>
+          <p class="project-links"><a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ/Auto-Apply">GitHub</a></p>
         </li>
         <li class="recent-item">
-          <h3 class="project-name">Auditex</h3>
-          <p class="project-tagline">A Chrome extension that runs Kokoro TTS entirely in your browser. No backend, no paywall, no server costs. Ever.</p>
-          <p class="project-desc">I got frustrated with Speechify's paywall and built a free alternative. The first version used a cloud backend. Then I realized I'd just recreated the same cost problem. So I moved the entire TTS pipeline into the browser using ONNX Runtime. 310MB model, running on-device, streaming audio through a chunked buffer with IndexedDB persistence. It works. I wrote about the whole journey.</p>
-          <p class="project-tech">JavaScript, ONNX Runtime Web, Web Audio API, Web Workers, IndexedDB, OPFS</p>
-          <p class="project-links"><a target="_blank" rel="noopener noreferrer" href="https://chromewebstore.google.com/detail/auditex/ikiaabefahnnfjninfhfeolbgkfnldpa">Chrome Web Store</a> · <a href="evolution-of-auditex.html">Essay</a></p>
+          <h3 class="project-name">Project Hydra</h3>
+          <p class="project-tagline">Backend scale engineering where the numbers are measured, not guessed.</p>
+          <p class="project-desc">Nothing is simulated. The harness brings a topology up as real Docker containers, drives it with k6, scrapes Prometheus, and returns throughput and p50/p95/p99 at each load level. A rigorous sweep runs 100 to 8,000 RPS and fits the Universal Scalability Law with confidence intervals. Every data point carries its provenance, so measured and projected never get confused for each other.</p>
+          <p class="project-tech">Docker, k6, Prometheus, Universal Scalability Law, M/M/c queuing models</p>
+          <p class="project-links"><a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ/Project-Hydra">GitHub</a></p>
+        </li>
+        <li class="recent-item">
+          <h3 class="project-name">Preference Falsification and LLM Sycophancy</h3>
+          <p class="project-tagline">What LLM agents say in public versus what they say in private, measured directly.</p>
+          <p class="project-desc">24 agents over 9 rounds and 7 conditions, each making a separate private and public call per round, so the gap is measured rather than inferred. Social pressure behaved as a threshold, not a gradient: falsification appeared only under concrete career threats, while no pressure and moderate pressure sat at the stochastic floor. A whistleblower planted at round five moved about 20% of agents to honest public expression. Written up as a preprint.</p>
+          <p class="project-tech">Python, LangChain, Google Gemini, NetworkX, Pandas, Matplotlib, Flask</p>
+          <p class="project-links"><a target="_blank" rel="noopener noreferrer" href="assets/proposal.pdf">Proposal</a> · <a target="_blank" rel="noopener noreferrer" href="https://github.com/BHUVAN-RJ/Preference-falsification-and-LLM-sycophancy">GitHub</a></p>
         </li>
       </ul>
 
@@ -103,5 +113,6 @@
     <span>&copy; 2025</span>
   </footer>
   <script src="js/theme.js"></script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "803ee68db8aa4fab97fc5fe91245f825"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

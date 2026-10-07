@@ -82,6 +82,27 @@ a[href^="mailto"]::after {
   font-family: var(--font-ui);
 }
 
+.site-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.short-link {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+  white-space: nowrap;
+  transition: opacity 0.15s, color 0.15s;
+}
+
+.short-link:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.short-link::after { content: none; }
+
 .site-name {
   font-size: 0.95rem;
   font-weight: 500;
@@ -472,6 +493,10 @@ a[href^="mailto"]::after {
   font-weight: 500;
 }
 
+.about-work-heading .essay-date {
+  margin-left: 0.6rem;
+}
+
 .about-work-entry p:last-of-type {
   margin-bottom: 0;
   font-family: var(--font-body);
@@ -575,6 +600,12 @@ a[href^="mailto"]::after {
 .essay-body pre code {
   background: none;
   padding: 0;
+}
+
+.essay-body .punchline {
+  margin: 2rem 0;
+  font-size: 18px;
+  line-height: 1.9;
 }
 
 .essay-body hr {
