@@ -180,11 +180,11 @@ The hard part was deciding when to split a block. A fixed variance cutoff behave
 
 24 agents over 9 rounds and 7 conditions, each making a separate private and public call per round, so the gap is measured rather than inferred.
 
-Social pressure behaved as a threshold, not a gradient: falsification appeared only under concrete career threats (gap 1.71), while no pressure and moderate pressure sat at the stochastic floor. A whistleblower planted at round five moved about 20% of agents to honest public expression. Written up as a preprint.
+Social pressure behaved as a threshold, not a gradient: falsification appeared only under concrete career threats (gap 1.71), while no pressure and moderate pressure sat at the stochastic floor. A whistleblower planted at round five moved about 20% of agents to honest public expression. Written up as a preprint, going up on arXiv.
 
 **Tech:** Python, LangChain, Google Gemini, NetworkX, Pandas, Matplotlib, Flask.
 
-**Links:** [GitHub](https://github.com/BHUVAN-RJ/Preference-falsification-and-LLM-sycophancy)
+**Links:** [Preprint (PDF)](https://bhuvanrj.me/portfolio/assets/preference-falsification-preprint.pdf) · [GitHub](https://github.com/BHUVAN-RJ/Preference-falsification-and-LLM-sycophancy)
 
 ### AudiTex (Feb 2026)
 

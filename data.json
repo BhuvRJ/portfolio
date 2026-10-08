@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-08T18:29:41.640Z",
+  "generated": "2026-10-08T22:45:40.786Z",
   "site": "https://bhuvanrj.me/portfolio/",
   "person": {
     "name": "Bhuvan Rajanahally Jayakumar",
@@ -218,10 +218,14 @@
     {
       "name": "Preference Falsification and LLM Sycophancy",
       "tagline": "What LLM agents say in public versus what they say in private, measured directly.",
-      "description": "24 agents over 9 rounds and 7 conditions, each making a separate private and public call per round, so the gap is measured rather than inferred.\n\nSocial pressure behaved as a threshold, not a gradient: falsification appeared only under concrete career threats (gap 1.71), while no pressure and moderate pressure sat at the stochastic floor. A whistleblower planted at round five moved about 20% of agents to honest public expression. Written up as a preprint.",
+      "description": "24 agents over 9 rounds and 7 conditions, each making a separate private and public call per round, so the gap is measured rather than inferred.\n\nSocial pressure behaved as a threshold, not a gradient: falsification appeared only under concrete career threats (gap 1.71), while no pressure and moderate pressure sat at the stochastic floor. A whistleblower planted at round five moved about 20% of agents to honest public expression. Written up as a preprint, going up on arXiv.",
       "tech": "Python, LangChain, Google Gemini, NetworkX, Pandas, Matplotlib, Flask.",
       "date": "April 2026",
       "links": [
+        {
+          "label": "Preprint (PDF)",
+          "url": "https://bhuvanrj.me/portfolio/assets/preference-falsification-preprint.pdf"
+        },
         {
           "label": "GitHub",
           "url": "https://github.com/BHUVAN-RJ/Preference-falsification-and-LLM-sycophancy"
