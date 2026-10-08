@@ -514,7 +514,7 @@ I shared the job autopilot with a friend early on, and it was very hard to share
 
 When a big company builds software, it has to look at how every release affects its perception.
 
-Apple recently announced Siri Recap for the Apple Watch, a feature that listens through the day and summarizes your conversations. Apple went out of its way to explain that no audio is stored, there is no transcript, and nobody is identified. There is a high chance I would use something like that. It was announced on stage, but Apple has said very little since, and it still has not shipped. Even they could see the backlash coming from a mile away.
+Apple recently announced Siri Recap for the Apple Watch, a feature that listens through the day and summarizes your conversations. Apple went out of its way to explain that no audio is stored, there is no transcript, and nobody is identified. There is a high chance I would use something like that. It was announced on stage, and the very next day Apple published a detailed explainer on how the audio is handled, before anyone had even used it. It still has not shipped. Even they could see the backlash coming from a mile away.
 
 That is how it is supposed to be. A company with that much riding on trust has to move carefully, because every feature is also a headline.
 
