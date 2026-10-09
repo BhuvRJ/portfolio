@@ -52,6 +52,14 @@ To check for drift, parse both and compare `date`, `links`, and any number that 
 - Keep project descriptions short on the short page. The user's words: recruiters "really don't give a fuck" about stories.
 - Only link things that are verified. Check the URL returns 200 before linking it.
 
+## Skills section
+
+`work/index.html` only, never the long site. It sits between Experience and Selected work: twelve core chips always visible, then a toggle that reveals all 120 skills as group cards (`.sk-all`, CSS columns so the cards pack without holes). Every skill is in the DOM at load, the toggle only flips `hidden`, so keyword scans and crawlers see the full list.
+
+The same list is machine-tagged twice in the head of that page: a `<meta name="keywords">` and a `Person` JSON-LD with `knowsAbout`. All three copies must carry the same skills, so regenerate them together.
+
+Agentic AI and LLM engineering lead on purpose, both in the core chips and as the first two cards. That is the attention the user wants drawn. Everything else follows the resume's grouping.
+
 ## Open items
 
 - **"Now" (`index.html`) is stale**: still says March 2026. Needs an October 2026 rewrite. Its meta description is the one meta tag the build does not generate; update by hand when "Now" changes.
