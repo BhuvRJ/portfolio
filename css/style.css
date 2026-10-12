@@ -624,6 +624,98 @@ a[href^="mailto"]::after {
   color: var(--accent);
 }
 
+/* Midas page */
+.sidebar nav a.nav-midas {
+  color: var(--accent);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sidebar nav a.nav-midas::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.sidebar nav a.nav-midas:hover {
+  color: var(--accent-hover);
+}
+
+.midas-hero {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.midas-title {
+  font-family: var(--font-ui);
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 0 0 0.35rem 0;
+  color: var(--accent);
+}
+
+.midas-sub {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0 0 1.25rem 0;
+}
+
+.midas-hero p {
+  margin-bottom: 1.25rem;
+}
+
+.midas-updates {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.midas-update {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.midas-update:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.midas-update p {
+  margin: 0 0 1.1rem 0;
+}
+
+.midas-update p:last-child {
+  margin-bottom: 0;
+}
+
+.midas-update-meta {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem !important;
+}
+
+.midas-figure {
+  margin: 1.5rem 0;
+}
+
+.midas-figure img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border: 1px solid var(--border);
+}
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--border);

@@ -7,6 +7,7 @@ Contact: rajanaha@usc.edu · [GitHub](https://github.com/BHUVAN-RJ) · [LinkedIn
 ## Pages
 
 - [Now](https://bhuvanrj.me/portfolio/index.html): What I am working on right now, plus two recent projects.
+- [Midas](https://bhuvanrj.me/portfolio/midas.html): Midas, personal software made for one person. What it is, plus weekly build updates.
 - [About](https://bhuvanrj.me/portfolio/about.html): Bio, work history, and influences.
 - [Projects](https://bhuvanrj.me/portfolio/projects.html): All 27 projects with descriptions, tech, and links.
 - [Essays](https://bhuvanrj.me/portfolio/essays.html): Index of essays.

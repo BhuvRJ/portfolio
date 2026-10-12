@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-09T18:35:22.061Z",
+  "generated": "2026-10-12T00:28:05.041Z",
   "site": "https://bhuvanrj.me/portfolio/",
   "person": {
     "name": "Bhuvan Rajanahally Jayakumar",
@@ -522,6 +522,11 @@
       "title": "Now",
       "url": "https://bhuvanrj.me/portfolio/index.html",
       "summary": "What I am working on right now, plus two recent projects."
+    },
+    {
+      "title": "Midas",
+      "url": "https://bhuvanrj.me/portfolio/midas.html",
+      "summary": "Midas, personal software made for one person. What it is, plus weekly build updates."
     },
     {
       "title": "About",

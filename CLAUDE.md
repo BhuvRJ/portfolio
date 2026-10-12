@@ -60,6 +60,14 @@ The same list is machine-tagged twice in the head of that page: a `<meta name="k
 
 Agentic AI and LLM engineering lead on purpose, both in the core chips and as the first two cards. That is the attention the user wants drawn. Everything else follows the resume's grouping.
 
+## Midas page
+
+`midas.html` on the long site, first in the sidebar nav (`.nav-midas`, accent dot) on every long page, above Now. Midas leads, About is last. The page is a short hero (what Midas is) plus an `updates` list, newest first: each update is one `<li class="midas-update">` with a `.midas-update-meta` line ("Week N, date"). Images go in a `.midas-figure`, capped at 300px wide.
+
+There is no public Midas link yet, so there is deliberately no CTA button. Add one when there is somewhere to send people.
+
+Photos from iPhone carry an EXIF orientation tag that `sips -r` does not bake in, so browsers rotate them back. Strip the APP1 segment after rotating (`scratchpad/strip.py`) and verify in a real browser, not the Read tool.
+
 ## Open items
 
 - **"Now" (`index.html`) is stale**: still says March 2026. Needs an October 2026 rewrite. Its meta description is the one meta tag the build does not generate; update by hand when "Now" changes.
