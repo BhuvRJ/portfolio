@@ -716,6 +716,129 @@ a[href^="mailto"]::after {
   border: 1px solid var(--border);
 }
 
+/* Midas weekly mockup gallery: thumbnails link to the full mockup */
+.midas-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 1.25rem 0 0 0;
+}
+
+.midas-tile {
+  display: block;
+  text-decoration: none;
+  color: var(--text-muted);
+}
+
+.midas-tile img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: border-color 0.15s;
+}
+
+.midas-tile:hover img {
+  border-color: var(--accent);
+}
+
+.midas-tile span {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  margin-top: 0.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.midas-more {
+  margin-top: 0.6rem;
+}
+
+.midas-more summary {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+/* Repair gesture history: scribble -> circle -> swipe, the picked one in accent */
+.midas-gestures {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.midas-gestures figure {
+  margin: 0;
+  text-align: center;
+  color: var(--text-muted);
+  opacity: 0.55;
+}
+
+.midas-gestures figure.picked {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.midas-gestures svg {
+  width: 64px;
+  height: 64px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.midas-gestures figure.picked svg {
+  border-color: var(--accent);
+}
+
+.midas-gestures figcaption {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  margin-top: 0.3rem;
+}
+
+.midas-arrow {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  margin-bottom: 1.1rem;
+}
+
+.midas-video {
+  margin: 1.25rem 0 0 0;
+}
+
+.midas-video video {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.midas-video figcaption {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 600px) {
+  .midas-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--border);
