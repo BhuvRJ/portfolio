@@ -77,6 +77,23 @@ function checkLocalReferences(html) {
   }
 }
 
+function checkVideoPlaysOnArrival(html) {
+  const videoTagMatch = html.match(/<video [^>]*>/);
+  if (!videoTagMatch) {
+    recordFailure('page has no video');
+    return;
+  }
+  const videoTag = videoTagMatch[0];
+  // Browsers refuse to autoplay a video with sound, and iPhone needs playsinline to play it in the page.
+  const requiredAttributes = ['autoplay', 'muted', 'playsinline'];
+  for (const attribute of requiredAttributes) {
+    const attributePattern = new RegExp(`\\s${attribute}(\\s|>|=)`);
+    if (!attributePattern.test(videoTag)) {
+      recordFailure(`video is missing "${attribute}", so it will not play on arrival`);
+    }
+  }
+}
+
 function checkSitemap() {
   const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
   if (!sitemap.includes(`<loc>${LANDING_URL}</loc>`)) {
@@ -98,6 +115,7 @@ function runChecks() {
   const html = fs.readFileSync(LANDING_FILE, 'utf8');
   checkInstallButtons(html);
   checkLocalReferences(html);
+  checkVideoPlaysOnArrival(html);
   checkSitemap();
   checkNoEmDashes(html);
 }
