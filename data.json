@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-17T01:49:09.735Z",
+  "generated": "2026-11-19T01:21:49.890Z",
   "site": "https://bhuvanrj.me/portfolio/",
   "person": {
     "name": "Bhuvan Rajanahally Jayakumar",
@@ -527,6 +527,11 @@
       "title": "Midas",
       "url": "https://bhuvanrj.me/portfolio/midas.html",
       "summary": "Midas, personal software made for one person. What it is, plus weekly build updates."
+    },
+    {
+      "title": "Get Midas",
+      "url": "https://bhuvanrj.me/portfolio/midas/index.html",
+      "summary": "Midas landing page: what it is, a short video, and the TestFlight install link."
     },
     {
       "title": "About",

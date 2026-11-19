@@ -143,6 +143,7 @@ function decodeEntities(x) {
 const pages = [
   { file: 'index.html', title: 'Now', summary: 'What I am working on right now, plus two recent projects.' },
   { file: 'midas.html', title: 'Midas', summary: 'Midas, personal software made for one person. What it is, plus weekly build updates.' },
+  { file: 'midas/index.html', title: 'Get Midas', summary: 'Midas landing page: what it is, a short video, and the TestFlight install link.' },
   { file: 'about.html', title: 'About', summary: 'Bio, work history, and influences.' },
   { file: 'projects.html', title: 'Projects', summary: `All ${projects.length} projects with descriptions, tech, and links.` },
   { file: 'essays.html', title: 'Essays', summary: 'Index of essays.' },
