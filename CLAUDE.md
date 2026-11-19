@@ -64,7 +64,7 @@ Agentic AI and LLM engineering lead on purpose, both in the core chips and as th
 
 `midas.html` on the long site, first in the sidebar nav (`.nav-midas`, accent dot) on every long page, above Now. Midas leads, About is last. The page is a short hero (what Midas is) plus an `updates` list, newest first: each update is one `<li class="midas-update">` with a `.midas-update-meta` line ("Week N, date"). Images go in a `.midas-figure`, capped at 300px wide.
 
-There is no public Midas link yet, so there is deliberately no CTA button. Add one when there is somewhere to send people.
+**Landing page (2026-11-18):** `midas/index.html`, live at `https://bhuvanrj.me/portfolio/midas/`, is the public Midas link (used as the startup URL on accelerator applications). Single file, inline CSS, no JS, in Midas's own design language (midas repo `docs/DESIGN.md`: black and white, the written "Midas" in Caveat Bold from `midas/Caveat-Bold.ttf`, light and dark by system setting), not the portfolio's style. Three "Get Midas" buttons go to the public TestFlight link `https://testflight.apple.com/join/JpYmDbsC`. Copy follows midas-intel `docs/word-list.md`. `midas.html` links to it with a plain text link in the hero. After any edit run `node scripts/check-midas-landing.js` (buttons, local files, sitemap entry, no em dashes) as well as `node scripts/build.js`.
 
 Photos from iPhone carry an EXIF orientation tag that `sips -r` does not bake in, so browsers rotate them back. Strip the APP1 segment after rotating (`scratchpad/strip.py`) and verify in a real browser, not the Read tool.
 
